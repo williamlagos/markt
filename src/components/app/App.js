@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   render() {
-    const url = process.env.API || 'http://127.0.0.1:8000';
+    const url = 'http://vupit.efforia.io';
     if (this.state.token === null) {
       return <Login api={url} authenticate={this.activate}/>;
     } else {
