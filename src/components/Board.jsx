@@ -20,7 +20,14 @@ class Board extends Component {
   }
 
   render() {
-    return (<h1> Hello World at {this.key} on {this.api} </h1>);
+    return (
+      <div>
+        <br/><img className="img-fluid" src="./drinks.png"/><br/><br/>
+        <h1>Bem-vindo ao Vupit App</h1>
+        <p>No momento não há bebidas para você escolher.</p>
+      </div>
+    )
+    // return (<h1> Hello World at {this.key} on {this.api} </h1>);
   }
 }
 

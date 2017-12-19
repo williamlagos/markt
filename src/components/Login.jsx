@@ -33,13 +33,15 @@ class Login extends Component {
 
   render() {
     return (
-      <form className="form-signin" onSubmit={this.handleSubmit}>
-        <img className="img-responsive" src="./icon.png" alt="Vupit Logo" style={{ maxWidth: '100px' }}/>
-        <h1 style={{ fontFamily: 'Roboto Slab' }}>Vupit</h1><br/>
-        <input type="text" name="login" className="form-control" value={this.state.login} onChange={this.handleChange} placeholder="E-mail"/>
-        <input type="password" name="passw" className="form-control" value={this.state.passw} onChange={this.handleChange} placeholder="Senha"/>
-        <button className="btn btn-lg btn-default btn-block" onSubmit={this.handleSubmit} type="submit">Entrar</button>
-      </form>
+      <div id="login">
+        <form className="form-signin" onSubmit={this.handleSubmit}>
+          <img className="img-responsive rounded" src="./icon.png" alt="Vupit Logo" style={{ maxWidth: '100px' }}/><br/>
+          <h1 style={{ fontFamily: 'Roboto Slab' }}>Vupit</h1><br/>
+          <input type="text" name="login" className="form-control" value={this.state.login} onChange={this.handleChange} placeholder="E-mail"/>
+          <input type="password" name="passw" className="form-control" value={this.state.passw} onChange={this.handleChange} placeholder="Senha"/>
+          <button className="btn btn-lg btn-default btn-block" onSubmit={this.handleSubmit} type="submit">Entrar</button>
+        </form>
+      </div>
     );
   }
 }

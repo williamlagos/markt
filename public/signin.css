@@ -3,13 +3,14 @@ html { overflow-x:hidden }
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #693E90;
-  color:#FFF !important;
+  /* background-color: #693E90; */
+  color:#000 !important;
   font-family: "Roboto";
 }
 
 .form-signin {
   max-width: 330px;
+  min-width: 270px;
   padding: 15px;
   margin: 0 auto;
 }
@@ -41,4 +42,18 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+#login {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+  height: auto;
 }
