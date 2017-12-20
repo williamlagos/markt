@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "react": "^16.0.0",
+    "react-burger-menu": "^2.1.11",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
   },
