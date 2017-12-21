@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import { Link, Switch, Route } from 'react-router-dom'
+import Catalog from './Catalog.jsx';
+import Home from './Home.jsx';
 import axios from 'axios';
 
 class Board extends Component {
@@ -24,16 +27,21 @@ class Board extends Component {
     return (
       <div>
         <Menu>
-          <a id="beer" className="menu-item text-left" href="/"><h4>Cervejas</h4></a><br/><br/>
-          <a id="craft" className="menu-item text-left" href="/"><h4>Artesanais</h4></a><br/><br/>
-          <a id="distilled" className="menu-item text-left" href="/"><h4>Destilados</h4></a><br/><br/>
-          <a id="sparkling" className="menu-item text-left" href="/"><h4>Espumantes</h4></a><br/><br/>
-          <a id="wine" className="menu-item text-left" href="/"><h4>Vinhos</h4></a><br/><br/>
+          <Link to="/beer" className="menu-item text-left"><h4>Cervejas</h4></Link><br/><br/>
+          <Link to="/craft" className="menu-item text-left"><h4>Artesanais</h4></Link><br/><br/>
+          <Link to="/distilled" className="menu-item text-left"><h4>Destilados</h4></Link><br/><br/>
+          <Link to="/sparkling" className="menu-item text-left"><h4>Espumantes</h4></Link><br/><br/>
+          <Link to="/wine" className="menu-item text-left"><h4>Vinhos</h4></Link><br/><br/>
         </Menu>
         <div>
-          <br/><img className="img-fluid" alt="Drinks" src="./drinks.png"/><br/><br/>
-          <h1>Bem-vindo ao Vupit App</h1>
-          <p>No momento não há bebidas para você escolher.</p>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/beer' component={Catalog}/>
+            <Route path='/craft' component={Catalog}/>
+            <Route path='/distilled' component={Catalog}/>
+            <Route path='/sparkling' component={Catalog}/>
+            <Route path='/wine' component={Catalog}/>
+          </Switch>
         </div>
       </div>
     )
