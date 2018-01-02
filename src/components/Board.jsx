@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { slide as Menu } from 'react-burger-menu';
+// import { slide as Menu } from 'react-burger-menu';
 import { Link, Switch, Route } from 'react-router-dom'
 import Catalog from './Catalog.jsx';
 import Home from './Home.jsx';
@@ -26,13 +26,6 @@ class Board extends Component {
   render() {
     return (
       <div>
-        <Menu>
-          <Link to="/beer" className="menu-item text-left"><h4>Cervejas</h4></Link><br/><br/>
-          <Link to="/craft" className="menu-item text-left"><h4>Artesanais</h4></Link><br/><br/>
-          <Link to="/distilled" className="menu-item text-left"><h4>Destilados</h4></Link><br/><br/>
-          <Link to="/sparkling" className="menu-item text-left"><h4>Espumantes</h4></Link><br/><br/>
-          <Link to="/wine" className="menu-item text-left"><h4>Vinhos</h4></Link><br/><br/>
-        </Menu>
         <div>
           <Switch>
             <Route exact path='/' component={Home}/>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Switch, Route } from 'react-router-dom'
 
 class Navbar extends Component {
   render() {
@@ -12,6 +13,9 @@ class Navbar extends Component {
           <img alt="Icon" className="d-inline navbar-img" src="./icon.png" style={{ height: '30px' }}/>
           <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
         </a>
+        <Link to="/beer" className="menu-item text-left"><i class="fa fa-beer"></i></Link>&nbsp;
+        <Link to="/distilled" className="menu-item text-left"><i class="fa fa-glass-martini"></i></Link>&nbsp;
+        <Link to="/wine" className="menu-item text-left"><i class="fa fa-trophy"></i></Link>&nbsp;
       </nav>
     );
   }
