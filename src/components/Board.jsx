@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { slide as Menu } from 'react-burger-menu';
-import { Link, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Catalog from './Catalog.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
