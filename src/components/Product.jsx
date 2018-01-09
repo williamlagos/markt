@@ -9,6 +9,7 @@ class Product extends Component {
     };
     this.key = sessionStorage.getItem('token');
     this.api = localStorage.getItem('api');
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +28,20 @@ class Product extends Component {
     });
   }
 
+  handleClick(value) {
+    let products = this.state.products.filter((product) => {
+      return product.key.id === value;
+    });
+    products.map((item) => {
+      // let identifier = item.key.id;
+      let cart = localStorage.getItem('cart') || JSON.stringify({'items': []});
+      let products = JSON.parse(cart)['items'];
+      products.push(item);
+      localStorage.setItem('cart', JSON.stringify({ 'items': products }));
+      return item;
+    });
+  }
+
   render() {
     if(this.state.products.length !== 0) {
       let products = this.state.products;
@@ -35,7 +50,7 @@ class Product extends Component {
         return (
           <div className="col-md-3" style={{ marginBottom: '5px', marginTop: '5px' }}>
             <div className="card">
-              <a style={{ width: '100%' }} href="#product"><img className="card-img-top img-fluid" style={{ width: '30px' }} src={p.photo} alt="Provider"/></a>
+              <a style={{ width: '100%' }} value={p.id} href="#product" onClick={() => this.handleClick(p.id)}><img className="card-img-top img-fluid" style={{ width: '30px' }} src={p.photo} alt="Provider"/></a>
               <div className="card-body">
                 <h5 className="card-title">{p.name}</h5>
                 <p className="card-text">{p.description}</p>

@@ -4,6 +4,7 @@ import Catalog from './Catalog.jsx';
 import Request from './Request.jsx';
 import Product from './Product.jsx';
 import Home from './Home.jsx';
+import Cart from './Cart.jsx';
 import axios from 'axios';
 
 class Board extends Component {
@@ -28,9 +29,10 @@ class Board extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div class="row">
+        <div className="row">
           <Switch>
             <Route exact path='/' render={()=><Home providers={this.state.providers}/>}/>
+            <Route path='/bag' component={Cart}/>
             <Route path='/catalog' component={Catalog}/>
             <Route path='/request' component={Request}/>
             <Route path='/product' component={Product}/>

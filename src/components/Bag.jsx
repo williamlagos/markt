@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Profile extends Component {
+class Bag extends Component {
   render(){
     return (
       <div className="dropdown show">
@@ -9,12 +9,12 @@ class Profile extends Component {
         </a>
         <div className="dropdown-menu dropdown-menu-right" style={{ right: 0, left: 'inherit' }} aria-labelledby="dropdownMenuLink">
           <h6 className="dropdown-header">Carrinho</h6>
-          <a className="dropdown-item" href="#products">Produtos</a>
-          <a className="dropdown-item" href="#clear">Limpar</a>
+          <a className="dropdown-item" href="/bag">Produtos</a>
+          <a className="dropdown-item" href="#clear" onClick={() => localStorage.removeItem('cart')}>Limpar</a>
         </div>
       </div>
     );
   }
 }
 
-export default Profile;
+export default Bag;
