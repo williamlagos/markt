@@ -7,13 +7,15 @@ class Cart extends Component {
     let items = JSON.parse(localStorage.getItem('cart')) || [];
     this.state = { items: items['items'] };
     this.api = localStorage.getItem('api');
-    this.key = sessionStorage.getItem('key');
+    this.key = sessionStorage.getItem('token');
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
     let products = this.state.items;
     products.map((product) => {
-      return axios.post(this.api + '/api/requests/', {
+      return axios({
+        method: 'post',
+        url: this.api + '/api/requests/',
         headers: { 'Authorization': 'Token ' + this.key },
         data: {
           'provider': product.provider,
@@ -26,7 +28,7 @@ class Cart extends Component {
     })
   }
   render() {
-    if(this.state.items.length !== 0) {
+    if(this.state.items) {
       let products = this.state.items.map((product) => {
         let p = product.key;
         return (
