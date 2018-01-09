@@ -29,11 +29,9 @@ class Board extends Component {
         <div>
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/beer' component={Catalog}/>
-            <Route path='/craft' component={Catalog}/>
-            <Route path='/distilled' component={Catalog}/>
-            <Route path='/sparkling' component={Catalog}/>
-            <Route path='/wine' component={Catalog}/>
+            <Route path='/search' component={Catalog}/>
+            <Route path='/discover' component={Catalog}/>
+            <Route path='/requests' component={Catalog}/>
           </Switch>
         </div>
       </div>
