@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import Address from './Address.jsx'
+import Profile from './Profile.jsx'
+import Bag from './Bag.jsx'
 
 class Navbar extends Component {
   render() {
@@ -20,13 +22,13 @@ class Navbar extends Component {
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
           </a>
           <Address display="d-none d-sm-block" width="500px" outline="btn-outline-light"/>
-          <img alt="user" src="./user.png" className="float-right rounded-circle img-fluid" style={{ maxHeight: '30px' }}/>&nbsp;&nbsp;
-          <img alt="bag" src="./bag.png" className="img-fluid" style={{ maxHeight: '30px' }}/>
+          <Profile/>&nbsp;&nbsp;
+          <Bag/>
         </nav>
         <nav className="navbar navbar-static-top" style={lightpurple}>
-          <Link to="/search" className="menu-item text-left"><i class="fa fa-search"></i>&nbsp;Buscar</Link>
-          <Link to="/discover" className="menu-item text-left"><i class="fa fa-compass"></i>&nbsp;Descobrir</Link>
-          <Link to="/requests" className="menu-item text-left"><i class="fa fa-bars"></i>&nbsp;Pedidos</Link>
+          <Link to="/search" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</Link>
+          <Link to="/discover" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</Link>
+          <Link to="/requests" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</Link>
         </nav>
         <nav className="navbar navbar-static-top navbar-light">
           <Address display="d-block d-sm-none" width="200px" outline="btn-outline-secondary"/>
