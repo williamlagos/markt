@@ -27,9 +27,9 @@ class Navbar extends Component {
         </nav>
         <nav className="navbar navbar-static-top" style={lightpurple}>
           <div className="container-fluid">
-            <Link to="/search" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</Link>
-            <Link to="/discover" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</Link>
-            <Link to="/requests" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</Link>
+            <Link to="/catalog" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</Link>
+            <Link to="/" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</Link>
+            <Link to="/request" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</Link>
           </div>
         </nav>
         <nav className="navbar navbar-static-top navbar-light">

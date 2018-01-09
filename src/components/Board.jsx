@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import { slide as Menu } from 'react-burger-menu';
 import { Switch, Route } from 'react-router-dom'
 import Catalog from './Catalog.jsx';
+import Request from './Request.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
 
@@ -9,34 +9,33 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: ''
+      providers: ''
     };
     this.key = sessionStorage.getItem('token');
     this.api = this.props.api;
   }
 
   componentDidMount() {
-    axios.get(this.api + '/api/products/',{
+    axios.get(this.api + '/api/profiles/?side=2',{
       headers: { 'Authorization': 'Token ' + this.key }
-    }).then((products) => {
-      this.setState({ products });
+    }).then((response) => {
+      let providers = response.data.results;
+      this.setState({ providers });
     });
   }
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="container-fluid">
+        <div class="row">
           <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/search' component={Catalog}/>
-            <Route path='/discover' component={Catalog}/>
-            <Route path='/requests' component={Catalog}/>
+            <Route exact path='/' render={()=><Home providers={this.state.providers}/>}/>
+            <Route path='/catalog' component={Catalog}/>
+            <Route path='/request' component={Request}/>
           </Switch>
         </div>
       </div>
     )
-    // return (<h1> Hello World at {this.key} on {this.api} </h1>);
   }
 }
 
