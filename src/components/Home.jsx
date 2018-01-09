@@ -9,7 +9,7 @@ class Home extends Component {
         return (
           <div className="col-md-4" style={{ marginBottom: '5px', marginTop: '5px' }}>
             <div className="card">
-              <Link to={`/product?provider=${provider.user}`}><img className="card-img-top" src={provider.photo} alt="Provider"/></Link>
+              <Link to={`/product?provider=${provider.user.id}`}><img className="card-img-top" src={provider.photo} alt="Provider"/></Link>
               <div className="card-body">
                 <h5 className="card-title">{provider.name}</h5>
                 <p className="card-text">{provider.description}</p>
