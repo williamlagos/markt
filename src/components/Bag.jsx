@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Bag extends Component {
   render(){
@@ -9,7 +10,7 @@ class Bag extends Component {
         </a>
         <div className="dropdown-menu dropdown-menu-right" style={{ right: 0, left: 'inherit' }} aria-labelledby="dropdownMenuLink">
           <h6 className="dropdown-header">Carrinho</h6>
-          <a className="dropdown-item" href="/bag">Produtos</a>
+          <Link className="dropdown-item" to="/bag">Produtos</Link>
           <a className="dropdown-item" href="#clear" onClick={() => localStorage.removeItem('cart')}>Limpar</a>
         </div>
       </div>
