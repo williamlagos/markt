@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 import Catalog from './Catalog.jsx';
 import Request from './Request.jsx';
+import Product from './Product.jsx';
 import Home from './Home.jsx';
 import axios from 'axios';
 
@@ -12,7 +13,7 @@ class Board extends Component {
       providers: ''
     };
     this.key = sessionStorage.getItem('token');
-    this.api = this.props.api;
+    this.api = localStorage.getItem('api');
   }
 
   componentDidMount() {
@@ -32,6 +33,7 @@ class Board extends Component {
             <Route exact path='/' render={()=><Home providers={this.state.providers}/>}/>
             <Route path='/catalog' component={Catalog}/>
             <Route path='/request' component={Request}/>
+            <Route path='/product' component={Product}/>
           </Switch>
         </div>
       </div>

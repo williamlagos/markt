@@ -12,13 +12,14 @@ class App extends Component {
 
   render() {
     const url = 'http://vupit.efforia.io';
+    localStorage.setItem('api',url);
     if (this.state.token === null) {
       return <Login api={url} authenticate={this.activate}/>;
     } else {
       return (
         <div>
           <Navbar/>
-          <Board api={url} token={this.state.token}/>
+          <Board/>
         </div>
       );
     }
