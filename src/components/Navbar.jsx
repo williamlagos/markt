@@ -26,9 +26,11 @@ class Navbar extends Component {
           <Bag/>
         </nav>
         <nav className="navbar navbar-static-top" style={lightpurple}>
-          <Link to="/search" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</Link>
-          <Link to="/discover" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</Link>
-          <Link to="/requests" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</Link>
+          <div className="container-fluid">
+            <Link to="/search" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</Link>
+            <Link to="/discover" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</Link>
+            <Link to="/requests" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</Link>
+          </div>
         </nav>
         <nav className="navbar navbar-static-top navbar-light">
           <Address display="d-block d-sm-none" width="200px" outline="btn-outline-secondary"/>
