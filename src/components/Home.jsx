@@ -5,9 +5,9 @@ class Home extends Component {
   render() {
     if(this.props.providers.length !== 0) {
       let providers = this.props.providers;
-      return providers.map((provider) => {
+      return providers.map((provider, index) => {
         return (
-          <div className="col-md-4" style={{ marginBottom: '5px', marginTop: '5px' }}>
+          <div key={index} className="col-md-4" style={{ marginBottom: '5px', marginTop: '5px' }}>
             <div className="card">
               <Link to={`/product?provider=${provider.user.id}`}><img className="card-img-top" src={provider.photo} alt="Provider"/></Link>
               <div className="card-body">

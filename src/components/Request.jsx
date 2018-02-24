@@ -21,9 +21,9 @@ class Request extends Component {
   render() {
     if(this.state.requests.length !== 0) {
       let requests = this.state.requests;
-      return requests.map((request) => {
+      return requests.map((request, index) => {
         return (
-          <div className="col-md-12" style={{ marginBottom: '5px', marginTop: '5px' }}>
+          <div key={index} className="col-md-12" style={{ marginBottom: '5px', marginTop: '5px' }}>
             <div className="card">
               <div className="card-body text-left">
                 <h6 className="card-text">Pedido {request.id}</h6>
