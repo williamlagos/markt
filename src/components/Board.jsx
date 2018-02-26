@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
 import Catalog from './Catalog.jsx';
 import Request from './Request.jsx';
 import Product from './Product.jsx';
@@ -27,19 +26,13 @@ class Board extends Component {
   }
 
   render() {
-    return (
-      <div className="container-fluid">
-        <div className="row">
-          <Switch>
-            <Route exact path='/' render={()=><Home providers={this.state.providers}/>}/>
-            <Route path='/bag' component={Cart}/>
-            <Route path='/catalog' component={Catalog}/>
-            <Route path='/request' component={Request}/>
-            <Route path='/product' component={Product}/>
-          </Switch>
-        </div>
-      </div>
-    )
+    switch(this.props.change) {
+      case 'bag': return (<Cart/>);
+      case 'catalog': return (<Catalog/>);
+      case 'request': return (<Request/>);
+      case 'product': return (<Product/>);
+      default: return (<Home providers={this.state.providers}/>);
+    }
   }
 }
 

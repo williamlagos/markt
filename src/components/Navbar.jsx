@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import Address from './Address.jsx'
 import Profile from './Profile.jsx'
 import Bag from './Bag.jsx'
@@ -27,9 +26,9 @@ class Navbar extends Component {
         </nav>
         <nav className="navbar navbar-static-top" style={lightpurple}>
           <div className="container-fluid">
-            <Link to="/catalog" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</Link>
-            <Link to="/" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</Link>
-            <Link to="/request" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</Link>
+            <a to="/catalog" className="menu-item text-left"><i className="fa fa-search"></i>&nbsp;Buscar</a>
+            <a to="/" className="menu-item text-left"><i className="fa fa-compass"></i>&nbsp;Descobrir</a>
+            <a to="/request" className="menu-item text-left"><i className="fa fa-bars"></i>&nbsp;Pedidos</a>
           </div>
         </nav>
         <nav className="navbar navbar-static-top navbar-light">

@@ -33,9 +33,9 @@ class Login extends Component {
 
   render() {
     return (
-      <div id="login" style={{ background: 'url("./friends.jpg")', backgroundSize: 'cover' }}>
+      <div id="login" style={{ background: 'url("./assets/friends.jpg")', backgroundSize: 'cover' }}>
         <form className="form-signin" onSubmit={this.handleSubmit} style={{ backgroundColor: 'white', borderRadius: '10px' }}>
-          <img className="img-responsive rounded" src="./icon.png" alt="Vupit Logo" style={{ maxWidth: '100px' }}/><br/>
+          <img className="img-responsive rounded" src="./assets/icon.png" alt="Vupit Logo" style={{ maxWidth: '100px' }}/><br/>
           <h1 style={{ fontFamily: 'Roboto Slab' }}>Vupit</h1><br/>
           <input type="text" name="login" className="form-control" value={this.state.login} onChange={this.handleChange} placeholder="E-mail"/>
           <input type="password" name="passw" className="form-control" value={this.state.passw} onChange={this.handleChange} placeholder="Senha"/>
