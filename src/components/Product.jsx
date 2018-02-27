@@ -13,7 +13,8 @@ class Product extends Component {
   }
 
   componentDidMount() {
-    axios.get(this.api + `/api/stocks/${this.props.location.search}`,{
+    console.log(`/api/stocks/${this.props.data}`)
+    axios.get(this.api + `/api/stocks/${this.props.data}`,{
       headers: { 'Authorization': 'Token ' + this.key }
     }).then((response) => {
       let products = response.data.results;
@@ -50,7 +51,9 @@ class Product extends Component {
         return (
           <div className="col-md-3" style={{ marginBottom: '5px', marginTop: '5px' }}>
             <div className="card">
-              <a style={{ width: '100%' }} value={p.id} href="#product" onClick={() => this.handleClick(p.id)}><img className="card-img-top img-fluid" style={{ width: '30px' }} src={p.photo} alt="Provider"/></a>
+              <a style={{ width: '100%' }} value={p.id} href="#product" onClick={() => this.handleClick(p.id)}>
+                <img className="card-img-top img-fluid" style={{ width: '30px' }} src={p.photo} alt="Provider"/>
+              </a>
               <div className="card-body">
                 <h5 className="card-title">{p.name}</h5>
                 <p className="card-text">{p.description}</p>

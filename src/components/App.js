@@ -8,35 +8,37 @@ class App extends Component {
     super(props);
     this.state = {
       token: sessionStorage.getItem('token') || null,
-      board: 'default'
+      board: 'default',
+      data: ''
     };
   }
 
   render() {
-    localStorage.setItem('api','http://vupit.efforia.io');
+    const api = 'http://vupit.efforia.io'
+    const choice = this.state.board
     if (this.state.token === null) {
-      return <Login authenticate={this.login}/>;
+      return <Login url={api} authenticate={(token) => this.login(token)}/>;
     } else {
       return (
         <div>
-          <Navbar navigate={this.route}/>
+          <Navbar navigate={(choice) => this.route(choice)}/>
           <div className="container-fluid">
             <div className="row">
-              <Board change={this.state.board}/>
+              <Board navigate={(choice) => this.route(choice)} change={choice} data={this.state.data}/>
             </div>
-          </div>  
+          </div>
         </div>
       );
     }
   }
 
-  login = (token) => {
+  login(token) {
     sessionStorage.setItem('token',token);
     this.setState({ token });
   }
 
-  route = (board) => {
-    this.setState({ board });
+  route(board, data) {
+    this.setState({ board, data });
   }
 }
 

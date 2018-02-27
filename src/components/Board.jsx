@@ -30,8 +30,8 @@ class Board extends Component {
       case 'bag': return (<Cart/>);
       case 'catalog': return (<Catalog/>);
       case 'request': return (<Request/>);
-      case 'product': return (<Product/>);
-      default: return (<Home providers={this.state.providers}/>);
+      case 'product': return (<Product data={this.props.data}/>);
+      default: return (<Home navigate={(choice, data) => this.props.navigate(choice, data)} providers={this.state.providers}/>);
     }
   }
 }

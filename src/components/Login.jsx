@@ -14,12 +14,17 @@ class Login extends Component {
   }
 
   handleSubmit(event) {
-    axios.post(this.props.api + '/api/auth/token/', {
+    const api = this.props.api
+    axios.post(api + '/api/auth/token/', {
       username: this.state.login,
       password: this.state.passw
     })
-    .then((result) => this.props.authenticate(result.data.token))
+    .then((result) => {
+      console.log('Submitted')
+      this.props.authenticate(result.data.token)
+    })
     .catch((error) => {
+      console.log(error)
       if (error.response.status === 401) alert('Unauthorized');
     });
     event.preventDefault();

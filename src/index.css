@@ -1,10 +1,6 @@
 html { overflow-x:hidden }
 
 body {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  /* background-color: #693E90; */
-  color:#000 !important;
   font-family: "Roboto";
 }
 
@@ -108,7 +104,7 @@ body {
 }
 
 .menu-item {
-  color: #FFF;
+  color: #FFF !important;
 }
 
 a:hover {
