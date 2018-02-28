@@ -16,7 +16,11 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }
     ]
   }
 }

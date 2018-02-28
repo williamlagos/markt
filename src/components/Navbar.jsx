@@ -10,15 +10,20 @@ class Navbar extends Component {
   render() {
     const purple = {
       backgroundColor: '#7A3B91',
+      top: '0px',
       border: '0px'
-    };
+    }
     const lightpurple = {
       backgroundColor: '#8B4CA2',
+      top: '58px',
       border: '0px'
-    };
+    }
+    const query = {
+      marginTop: '98px'
+    }
     return (
       <div>
-        <nav className="navbar navbar-static-top" style={purple}>
+        <nav className="navbar fixed-top" style={purple}>
           <a className="navbar-brand" href="/">
             <img alt="Icon" className="d-inline navbar-img" src="./assets/icon.png" style={{ height: '30px' }}/>
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
@@ -27,14 +32,14 @@ class Navbar extends Component {
           <Profile/>&nbsp;&nbsp;
           <Bag navigate={(choice) => this.route(choice)}/>
         </nav>
-        <nav className="navbar navbar-static-top" style={lightpurple}>
+        <nav className="navbar fixed-top" style={lightpurple}>
           <div className="container-fluid">
             <a href="#" className="menu-item text-left" onClick={() => this.route('catalog', {})}><i className="fa fa-search"></i>&nbsp;Buscar</a>
             <a href="#" className="menu-item text-left" onClick={() => this.route('home', {})}><i className="fa fa-compass"></i>&nbsp;Descobrir</a>
             <a href="#" className="menu-item text-left" onClick={() => this.route('request', {})}><i className="fa fa-bars"></i>&nbsp;Pedidos</a>
           </div>
         </nav>
-        <nav className="navbar navbar-static-top navbar-light">
+        <nav className="navbar sticky-top navbar-light" style={query}>
           <Address display="d-block d-sm-none" width="200px" outline="btn-outline-secondary"/>
         </nav>
       </div>
