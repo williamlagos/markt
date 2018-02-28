@@ -40,7 +40,7 @@ class Bar extends Component {
         <nav className="navbar fixed-top" style={status}></nav>
         <nav className="navbar fixed-top" style={purple}>
           <a className="navbar-brand" href="/">
-            <img alt="Icon" className="d-inline navbar-img" src="./assets/icon.png" style={icon}/>
+            <img alt="Icon" className="d-inline navbar-img" src="./assets/iconwhite.png" style={icon}/>
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
           </a>
           <Search display="d-none" width="500px" outline="btn-outline-light"/>
