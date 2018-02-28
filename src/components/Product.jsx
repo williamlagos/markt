@@ -8,7 +8,7 @@ class Product extends Component {
       products: ''
     };
     this.key = sessionStorage.getItem('token');
-    this.api = localStorage.getItem('api');
+    this.api = this.props.url;
     this.handleClick = this.handleClick.bind(this);
   }
 

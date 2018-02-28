@@ -6,7 +6,7 @@ class Cart extends Component {
     super(props);
     let items = JSON.parse(localStorage.getItem('cart')) || [];
     this.state = { items: items['items'] };
-    this.api = localStorage.getItem('api');
+    this.api = this.props.url;
     this.key = sessionStorage.getItem('token');
     this.handleClick = this.handleClick.bind(this);
   }

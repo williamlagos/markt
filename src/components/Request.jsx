@@ -6,7 +6,7 @@ class Request extends Component {
     super(props);
     this.state = { requests: '' }
     this.key = sessionStorage.getItem('token');
-    this.api = localStorage.getItem('api');
+    this.api = this.props.url;
   }
 
   componentDidMount() {

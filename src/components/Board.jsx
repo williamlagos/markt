@@ -13,7 +13,7 @@ class Board extends Component {
       providers: ''
     };
     this.key = sessionStorage.getItem('token');
-    this.api = localStorage.getItem('api');
+    this.api = this.props.url;
   }
 
   componentDidMount() {
@@ -27,10 +27,10 @@ class Board extends Component {
 
   render() {
     switch(this.props.change) {
-      case 'bag': return (<Cart/>);
-      case 'catalog': return (<Catalog/>);
-      case 'request': return (<Request/>);
-      case 'product': return (<Product data={this.props.data}/>);
+      case 'bag': return (<Cart url={this.props.url}/>);
+      case 'catalog': return (<Catalog url={this.props.url}/>);
+      case 'request': return (<Request url={this.props.url}/>);
+      case 'product': return (<Product url={this.props.url} data={this.props.data}/>);
       default: return (<Home navigate={(choice, data) => this.props.navigate(choice, data)} providers={this.state.providers}/>);
     }
   }

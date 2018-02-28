@@ -24,7 +24,7 @@ class App extends Component {
           <Navbar navigate={(choice) => this.route(choice)}/>
           <div className="container-fluid">
             <div className="row">
-              <Board navigate={(choice) => this.route(choice)} change={choice} data={this.state.data}/>
+              <Board url={api} navigate={(choice) => this.route(choice)} change={choice} data={this.state.data}/>
             </div>
           </div>
         </div>

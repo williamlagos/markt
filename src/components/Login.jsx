@@ -14,7 +14,7 @@ class Login extends Component {
   }
 
   handleSubmit(event) {
-    const api = this.props.api
+    const api = this.props.url
     axios.post(api + '/api/auth/token/', {
       username: this.state.login,
       password: this.state.passw
