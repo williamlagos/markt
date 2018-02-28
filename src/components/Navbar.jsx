@@ -28,7 +28,6 @@ class Navbar extends Component {
     const purple = {}
     const lightpurple = {}
     if (this.checkAgent() > 0) {
-      status.position = 'absolute'
       status.top = '0px'
       status.height = '20px'
       lightpurple.top = '78px'
