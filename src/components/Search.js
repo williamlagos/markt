@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Address extends Component {
+class Search extends Component {
   render () {
     return (
       <form className={`form-inline mr-auto ml-auto ${this.props.display}`}>
@@ -15,4 +15,4 @@ class Address extends Component {
   }
 }
 
-export default Address
+export default Search
