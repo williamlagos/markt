@@ -7,20 +7,39 @@ class Navbar extends Component {
   route(choice, data) {
     this.props.navigate(choice, data)
   }
-  render() {
-    const purple = {
-      backgroundColor: '#7A3B91',
-      top: '0px',
-      border: '0px'
+
+  checkAgent () {
+    const standalone = window.navigator.standalone
+    const userAgent = window.navigator.userAgent.toLowerCase()
+    const safari = /safari/.test(userAgent)
+    const ios = /iphone|ipod|ipad/.test(userAgent)
+    if (ios) {
+      if (!standalone && safari) return 1 // 'browser'
+      else if (standalone && !safari) return 2 // 'standalone'
+      else if (!standalone && !safari) return 3 // 'wkwebview'
+    } else {
+      return 0 // 'not iOS'
     }
-    const lightpurple = {
-      backgroundColor: '#8B4CA2',
-      top: '58px',
-      border: '0px'
+  }
+
+  render () {
+    const query = {}
+    const purple = {}
+    const lightpurple = {}
+    if (this.checkAgent() > 0) {
+      lightpurple.top = '70px'
+      query.marginTop = '120px'
+      purple.paddingTop = '20px'
+      purple.top = '0px'
+    } else {
+      lightpurple.top = '58px'
+      query.marginTop = '98px'
+      purple.top = '0px'
     }
-    const query = {
-      marginTop: '98px'
-    }
+    purple.backgroundColor = '#7A3B91'
+    lightpurple.backgroundColor = '#8B4CA2'
+    lightpurple.border = '0px'
+    purple.border = '0px'
     return (
       <div>
         <nav className="navbar fixed-top" style={purple}>

@@ -20,7 +20,6 @@ class Login extends Component {
       password: this.state.passw
     })
     .then((result) => {
-      window.scrollTo(0,0)
       this.props.authenticate(result.data.token)
     })
     .catch((error) => {
