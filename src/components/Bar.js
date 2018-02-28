@@ -21,7 +21,7 @@ class Bar extends Component {
     const icon = { height: '30px', maxHeight: '30px' }
     const query = {}
     const status = { backgroundColor: '#BB95C9', border: '0px' }
-    const purple = { backgroundColor: '#7A3B91', border: '0px' }
+    const purple = { backgroundColor: '#77448F', border: '0px' }
     const border = { backgroundColor: '#8B4CA2', border: '0px' }
     if (this.checkAgent() > 0) {
       status.top = '0px'
@@ -44,7 +44,7 @@ class Bar extends Component {
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
           </a>
           <Search display="d-none" width="500px" outline="btn-outline-light"/>
-          <a onClick={this.props.showProfile} role="button" data-toggle="dropdown" class="ml-auto" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+          <a onClick={this.props.showProfile} role="button" data-toggle="dropdown" className="d-none ml-auto" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
             <img alt="user" src="./assets/user.png" className="float-right rounded-circle img-fluid" style={icon}/>
           </a>&nbsp;&nbsp;
           <a onClick={this.props.showCart} role="button" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
