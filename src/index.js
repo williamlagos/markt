@@ -1,7 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import registerServiceWorker from './worker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import vupitApp from './reducers'
+import App from './components/App'
+import registerServiceWorker from './worker'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+let store = createStore(vupitApp)
+
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
+registerServiceWorker()

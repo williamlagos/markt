@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { func } from 'prop-types'
 import Address from './Address.jsx'
 import Profile from './Profile.jsx'
 import Bag from './Bag.jsx'
 
 class Navbar extends Component {
-  route(choice, data) {
+  route (choice, data) {
     this.props.navigate(choice, data)
   }
 
@@ -67,8 +68,12 @@ class Navbar extends Component {
           <Address display="d-block d-sm-none" width="200px" outline="btn-outline-secondary"/>
         </nav>
       </div>
-    );
+    )
   }
 }
 
-export default Navbar;
+Navbar.propTypes = {
+  navigate: func
+}
+
+export default Navbar

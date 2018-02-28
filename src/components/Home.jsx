@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+// import { array, number } from 'prop-types'
 
 class Home extends Component {
-  access(item, url) {
+  access (item, url) {
     // this.props.navigate(item, url)
   }
 
-  render() {
+  render () {
     const overflow = {
       overflow: 'hidden',
       maxHeight: '250px'
     }
-    if(this.props.providers.length !== 0) {
-      let providers = this.props.providers;
+    if (this.props.providers.length !== 0) {
+      let providers = this.props.providers
       return providers.map((provider, index) => {
-        const id = provider.user.id
         return (
           <div key={index} className="col-md-4" style={{ marginBottom: '5px', marginTop: '5px' }}>
             <div className="card">
@@ -30,7 +30,7 @@ class Home extends Component {
             </div>
           </div>
         )
-      });
+      })
     } else {
       /* return (
         <div>
@@ -44,4 +44,9 @@ class Home extends Component {
   }
 }
 
-export default Home;
+Home.propTypes = {
+  // providers: array,
+  // length: number
+}
+
+export default Home

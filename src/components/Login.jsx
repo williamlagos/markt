@@ -1,41 +1,33 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import { string, func } from 'prop-types'
+import axios from 'axios'
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      passw: '',
-      login: ''
-    }
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  constructor (props) {
+    super(props)
+    this.state = { passw: '', login: '' }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleSubmit(event) {
+  handleSubmit (event) {
     const api = this.props.url
     axios.post(api + '/api/auth/token/', {
       username: this.state.login,
       password: this.state.passw
-    })
-    .then((result) => {
+    }).then((result) => {
       this.props.authenticate(result.data.token)
     })
-    .catch((error) => {
-      console.log(error)
-      if (error.response.status === 401) alert('Unauthorized');
-    });
-    event.preventDefault();
+    event.preventDefault()
   }
 
-  handleChange(event) {
-    const name = event.target.name;
-    const vals = event.target.value;
-    this.setState({ [name]: vals });
+  handleChange (event) {
+    const name = event.target.name
+    const vals = event.target.value
+    this.setState({ [name]: vals })
   }
 
-  render() {
+  render () {
     return (
       <div id="login" style={{ background: 'url("./assets/friends.jpg")', backgroundSize: 'cover' }}>
         <form className="form-signin" onSubmit={this.handleSubmit} style={{ backgroundColor: 'white', borderRadius: '10px' }}>
@@ -46,8 +38,13 @@ class Login extends Component {
           <button className="btn btn-lg btn-default btn-block" onSubmit={this.handleSubmit} type="submit">Entrar</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default Login;
+Login.propTypes = {
+  url: string,
+  authenticate: func
+}
+
+export default Login
