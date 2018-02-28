@@ -24,24 +24,29 @@ class Navbar extends Component {
 
   render () {
     const query = {}
+    const status = {}
     const purple = {}
     const lightpurple = {}
     if (this.checkAgent() > 0) {
-      lightpurple.top = '70px'
-      query.marginTop = '120px'
-      purple.paddingTop = '20px'
-      purple.top = '0px'
+      status.display = 'block'
+      status.height = '20px'
+      lightpurple.top = '78px'
+      query.marginTop = '118px'
+      purple.top = '20px'
     } else {
+      status.display = 'none'
       lightpurple.top = '58px'
       query.marginTop = '98px'
       purple.top = '0px'
     }
+    status.backgroundColor = '#bb95c9'
     purple.backgroundColor = '#7A3B91'
     lightpurple.backgroundColor = '#8B4CA2'
     lightpurple.border = '0px'
     purple.border = '0px'
     return (
       <div>
+        <nav className="navbar fixed-top" style={status}></nav>
         <nav className="navbar fixed-top" style={purple}>
           <a className="navbar-brand" href="/">
             <img alt="Icon" className="d-inline navbar-img" src="./assets/icon.png" style={{ height: '30px' }}/>
