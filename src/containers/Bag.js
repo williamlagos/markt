@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
 
-class Cart extends Component {
+class Bag extends Component {
   constructor(props) {
     super(props);
     let items = JSON.parse(localStorage.getItem('cart')) || [];
@@ -68,4 +68,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+export default Bag

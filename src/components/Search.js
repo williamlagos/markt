@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Address extends Component {
-  render() {
+  render () {
     return (
       <form className={`form-inline mr-auto ml-auto ${this.props.display}`}>
         <div className="input-group" style={{ minWidth: `${this.props.width}` }}>
@@ -11,8 +11,8 @@ class Address extends Component {
           </div>
         </div>
       </form>
-    );
+    )
   }
 }
 
-export default Address;
+export default Address

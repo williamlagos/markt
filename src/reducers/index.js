@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
-import tests from './tests'
+import navigate from './navigate'
+import fetch from './fetch'
 
-const vupitApp = combineReducers({ tests })
+const vupitApp = combineReducers({ navigate, fetch })
 
 export default vupitApp

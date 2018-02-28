@@ -1,6 +1,5 @@
-export const test = text => {
-  return {
-    type: 'TEST',
-    text
-  }
-}
+export const showCart = () => ({ type: 'CART', show: 2 })
+export const showRequests = () => ({ type: 'REQUESTS', show: 1 })
+export const showProviders = () => ({ type: 'PROVIDERS', show: 1 })
+export const showProducts = () => ({ type: 'PRODUCTS', show: 1 })
+export const showProfile = () => ({ type: 'PROFILE', show: 2 })

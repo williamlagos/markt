@@ -16,9 +16,7 @@ class Profile extends Component {
   render () {
     return (
       <div className="dropdown show">
-        <a role="button" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
-          <img alt="user" src="./assets/user.png" className="float-right rounded-circle img-fluid" style={{ maxHeight: '30px' }}/>
-        </a>
+
       </div>
     )
   }

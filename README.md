@@ -1,3 +1,3 @@
-# Vupit web app
+# Vupit webapp
 
 Application developed with React, Redux, Webpack and ESLint.
