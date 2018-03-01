@@ -43,10 +43,10 @@ class Bar extends Component {
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
           </a>
           <Form display="d-none" width="500px" outline="btn-outline-light"/>
-          <a onClick={this.props.showProfile} role="button" data-toggle="dropdown" className="ml-auto" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+          <a href="#" onClick={this.props.showProfile} className="ml-auto">
             <img alt="user" src="./assets/user.png" className="float-right rounded-circle img-fluid" style={icon}/>
           </a>&nbsp;&nbsp;
-          <a onClick={this.props.showCart} role="button" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+          <a href="#" onClick={this.props.showCart}>
             <img alt="bag" src="./assets/bag.png" className="img-fluid" style={icon}/>
           </a>
         </nav>

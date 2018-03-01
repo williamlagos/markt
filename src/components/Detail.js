@@ -14,8 +14,8 @@ class Detail extends Component {
     return (
       <div className="col-md-12">
         <br/><img className="img-fluid" alt="Drinks" src="./assets/drinks.png"/><br/><br/>
-        <h1>Bebidas</h1>
-        <p>No momento não há bebidas para você escolher.</p>
+        <h1>Perfil</h1>
+        <p>Aqui você controla as informações do seu perfil.</p>
       </div>
     )
   }
