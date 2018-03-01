@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { string, func } from 'prop-types'
 import axios from 'axios'
 import Page from '../components/Page'
@@ -12,7 +13,7 @@ class Entrance extends Component {
   }
 
   handleSubmit (event) {
-    const api = this.props.url
+    const api = this.props.api
     axios.post(api + '/api/auth/token/', {
       username: this.state.login,
       password: this.state.passw
@@ -33,9 +34,13 @@ class Entrance extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({ api: state.fetch })
+
 Entrance.propTypes = {
   url: string,
   authenticate: func
 }
 
-export default Entrance
+const EntranceContainer = connect(mapStateToProps)(Entrance)
+
+export default EntranceContainer

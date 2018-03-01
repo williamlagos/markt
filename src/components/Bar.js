@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import Search from './Search'
+import Form from './Form'
 
 class Bar extends Component {
-
   checkAgent () {
     const standalone = window.navigator.standalone
     const userAgent = window.navigator.userAgent.toLowerCase()
@@ -43,8 +42,8 @@ class Bar extends Component {
             <img alt="Icon" className="d-inline navbar-img" src="./assets/iconwhite.png" style={icon}/>
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
           </a>
-          <Search display="d-none" width="500px" outline="btn-outline-light"/>
-          <a onClick={this.props.showProfile} role="button" data-toggle="dropdown" className="d-none ml-auto" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+          <Form display="d-none" width="500px" outline="btn-outline-light"/>
+          <a onClick={this.props.showProfile} role="button" data-toggle="dropdown" className="ml-auto" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
             <img alt="user" src="./assets/user.png" className="float-right rounded-circle img-fluid" style={icon}/>
           </a>&nbsp;&nbsp;
           <a onClick={this.props.showCart} role="button" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false">
@@ -59,7 +58,7 @@ class Bar extends Component {
           </div>
         </nav>
         <nav className="navbar sticky-top navbar-light" style={query}>
-          <Search display="d-none" width="200px" outline="btn-outline-secondary"/>
+          <Form display="d-none" width="200px" outline="btn-outline-secondary"/>
         </nav>
       </div>
     )

@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
-
-/* <div className="dropdown-menu dropdown-menu-right" style={{ right: 0, left: 'inherit' }} aria-labelledby="dropdownMenuLink">
-  <h6 className="dropdown-header">Perfil</h6>
-  <a className="dropdown-item" href="#profile">Visualizar</a>
-  <a className="dropdown-item" onClick={(e) => this.logout(e)}href="#logout">Sair</a>
-</div> */
+import Detail from '../components/Detail'
 
 class Profile extends Component {
   logout (event) {
@@ -15,8 +10,10 @@ class Profile extends Component {
 
   render () {
     return (
-      <div className="dropdown show">
-
+      <div className="container-fluid">
+        <div className="row">
+          <Detail/>
+        </div>
       </div>
     )
   }

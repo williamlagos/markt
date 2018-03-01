@@ -6,27 +6,17 @@ import Content from './Content'
 class App extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      token: sessionStorage.getItem('token') || null,
-      board: 'default',
-      data: ''
-    }
+    this.state = { token: sessionStorage.getItem('token') || null }
   }
 
   render () {
-    const api = 'http://vupit.efforia.io'
-    const choice = this.state.board
     if (this.state.token === null) {
-      return <Entrance url={api} authenticate={(token) => this.login(token)}/>
+      return <Entrance authenticate={(token) => this.login(token)}/>
     } else {
       return (
         <div>
-          <Navigation navigate={(choice) => this.route(choice)}/>
-          <div className="container-fluid">
-            <div className="row">
-              <Content url={api} navigate={(choice) => this.route(choice)} change={choice} data={this.state.data}/>
-            </div>
-          </div>
+          <Navigation/>
+          <Content/>
         </div>
       )
     }
@@ -36,10 +26,6 @@ class App extends Component {
     sessionStorage.setItem('token', token)
     this.setState({ token })
   }
-
-  route (board, data) {
-    this.setState({ board, data })
-  }
 }
 
-export default App;
+export default App
