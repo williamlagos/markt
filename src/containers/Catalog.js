@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import List from '../components/List'
+import Grid from '../components/Grid'
 import axios from 'axios'
 
 class Catalog extends Component {
@@ -24,7 +24,7 @@ class Catalog extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <List items={this.state.items}/>
+          <Grid items={this.state.items}/>
         </div>
       </div>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import List from '../components/List'
 import axios from 'axios'
 
@@ -30,10 +31,11 @@ class Bag extends Component {
     })
   }
   render () {
+    const bag = this.props.bag
     return (
       <div className="container-fluid">
         <div className="row">
-          <List items={this.state.items}/>
+          <List horizontal items={bag.items}/>
           <div className="col-md-12">
             <button className="btn btn-block btn-success" onClick={this.handleClick}> Fechar pedido com os produtos </button>
           </div>
@@ -43,4 +45,8 @@ class Bag extends Component {
   }
 }
 
-export default Bag
+const mapStateToProps = (state) => ({ bag: state.cart })
+
+const BagContainer = connect(mapStateToProps)(Bag)
+
+export default BagContainer

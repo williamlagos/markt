@@ -23,7 +23,7 @@ class Request extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <List items={this.state.requests}/>
+          <List items={this.state.requests} brief />
         </div>
       </div>
     )

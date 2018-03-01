@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import List from '../components/List'
+import { connect } from 'react-redux'
 import axios from 'axios'
+import { addToCart } from '../actions'
 
 class Product extends Component {
   constructor (props) {
@@ -46,11 +48,16 @@ class Product extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <List items={this.state.products}/>
+          <List items={this.state.products} addToCart={this.props.addToCart}/>
         </div>
       </div>
     )
   }
 }
 
-export default Product
+const mapStateToProps = (state) => ({ api: state.fetch })
+const mapDispatchToProps = { addToCart }
+
+const ProductContainer = connect(mapStateToProps, mapDispatchToProps)(Product)
+
+export default ProductContainer
