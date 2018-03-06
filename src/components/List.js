@@ -11,15 +11,15 @@ class List extends Component {
         <div key={index} className="col-md-12" style={{ marginBottom: '5px', marginTop: '5px' }}>
           <div className="card">
             <div className="row">
-              <a className="col-2" onClick={() => this.props.addToCart(p)} value={p.id} href="#product">
-                <img className="card-img-top img-fluid" style={{ width: '25px' }} src={p.key.photo} alt="Provider"/>
-              </a>
-              <div className="col-10 text-left">
+              <div className="col-md-10 col-xs-12 text-left">
                 <div className="card-body">
                   <h5 className="card-title">{p.key.name}</h5>
                   <p className="card-text">{p.key.description}</p>
                 </div>
               </div>
+              <a className="col-md-2 col-xs-12" onClick={() => this.props.addToCart(p)} value={p.id} href="#product">
+                <img className="img-fluid" style={{ height: '100px', padding: '5px' }} src={p.key.photo} alt="Provider"/>
+              </a>
             </div>
           </div>
         </div>

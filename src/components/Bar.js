@@ -43,7 +43,7 @@ class Bar extends Component {
             <p className="d-inline" style={{ fontFamily: 'Roboto Slab', color: 'white' }}> Vupit </p>
           </a>
           <Form display="d-none" width="500px" outline="btn-outline-light"/>
-          <a href="#" onClick={this.props.showProfile} className="ml-auto">
+          <a href="#" onClick={this.props.showProfile} className="d-none ml-auto">
             <img alt="user" src="./assets/user.png" className="float-right rounded-circle img-fluid" style={icon}/>
           </a>&nbsp;&nbsp;
           <a href="#" onClick={this.props.showCart}>
@@ -52,7 +52,7 @@ class Bar extends Component {
         </nav>
         <nav className="navbar fixed-top" style={border}>
           <div className="container-fluid">
-            <a href="#" className="menu-item text-left" onClick={this.props.showProducts}><i className="fa fa-search"></i>&nbsp;Produtos</a>
+            <a href="#" className="menu-item text-left" onClick={this.props.showProducts}><i className="fa fa-th"></i>&nbsp;Produtos</a>
             <a href="#" className="menu-item text-left" onClick={this.props.showProviders}><i className="fa fa-compass"></i>&nbsp;Descobrir</a>
             <a href="#" className="menu-item text-left" onClick={this.props.showRequests}><i className="fa fa-bars"></i>&nbsp;Pedidos</a>
           </div>
