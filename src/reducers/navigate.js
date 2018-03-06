@@ -5,8 +5,8 @@ const navigate = (state = initialState, action) => {
     case 'CART': return { ...state, choice: action.type }
     case 'REQUESTS': return { ...state, choice: action.type }
     case 'PROVIDERS': return { ...state, choice: action.type }
-    case 'PRODUCTS': return { ...state, choice: action.type }
     case 'PROFILE': return { ...state, choice: action.type }
+    case 'PRODUCTS': return { ...state, choice: action.type, query: action.query || '' }
     default: return state
   }
 }

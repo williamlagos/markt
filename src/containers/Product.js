@@ -55,7 +55,7 @@ class Product extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch })
+const mapStateToProps = (state) => ({ api: state.fetch, data: state.navigate.query })
 const mapDispatchToProps = { addToCart }
 
 const ProductContainer = connect(mapStateToProps, mapDispatchToProps)(Product)

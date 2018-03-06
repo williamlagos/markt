@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { showProducts } from '../actions'
 import Grid from '../components/Grid'
 import axios from 'axios'
 
@@ -8,6 +10,7 @@ class Catalog extends Component {
     this.state = { items: [] }
     this.key = sessionStorage.getItem('token')
     this.api = this.props.url
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount () {
@@ -20,15 +23,24 @@ class Catalog extends Component {
     })
   }
 
+  handleClick (provider) {
+    this.props.showProducts(`?provider=${provider}`)
+  }
+
   render () {
     return (
       <div className="container-fluid">
         <div className="row">
-          <Grid items={this.state.items}/>
+          <Grid items={this.state.items} select={this.handleClick}/>
         </div>
       </div>
     )
   }
 }
 
-export default Catalog
+const mapStateToProps = (state) => ({ api: state.fetch })
+const mapDispatchToProps = { showProducts }
+
+const CatalogContainer = connect(mapStateToProps, mapDispatchToProps)(Catalog)
+
+export default CatalogContainer

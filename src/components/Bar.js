@@ -21,7 +21,7 @@ class Bar extends Component {
     const query = {}
     const status = { backgroundColor: '#BB95C9', border: '0px' }
     const purple = { backgroundColor: '#77448F', border: '0px' }
-    const border = { backgroundColor: '#8B4CA2', border: '0px' }
+    const border = { backgroundColor: '#8B4CA2', border: '0px', padding: '8px 0px' }
     if (this.checkAgent() > 0) {
       status.top = '0px'
       status.height = '20px'

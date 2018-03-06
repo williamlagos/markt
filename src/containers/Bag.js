@@ -13,9 +13,10 @@ class Bag extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick () {
-    let products = this.state.items
+  handleClick (event) {
+    let products = this.props.bag.items
     products.map((product) => {
+      console.log(product)
       return axios({
         method: 'post',
         url: this.api + '/api/requests/',
@@ -29,6 +30,7 @@ class Bag extends Component {
         localStorage.removeItem('cart')
       })
     })
+    event.preventDefault()
   }
   render () {
     const bag = this.props.bag
