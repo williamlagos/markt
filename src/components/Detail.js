@@ -13,9 +13,9 @@ class Detail extends Component {
   render () {
     return (
       <div className="col-md-12">
-        <br/><img className="img-fluid" alt="Drinks" src="./assets/drinks.png"/><br/><br/>
-        <h1>Perfil</h1>
-        <p>Aqui você controla as informações do seu perfil.</p>
+        <br/><img className="img-fluid" alt="image" src={this.props.image}/><br/><br/>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.text}</p>
       </div>
     )
   }
