@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import List from '../components/List'
+import Grid from '../components/Grid'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import { addToCart } from '../actions'
@@ -48,7 +48,7 @@ class Product extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <List items={this.state.products} addToCart={this.props.addToCart}/>
+          <Grid items={this.state.products} addToCart={this.props.addToCart} priced/>
         </div>
       </div>
     )

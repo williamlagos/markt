@@ -17,7 +17,9 @@ class List extends Component {
               <div className="col-md-10 col-xs-12 text-left">
                 <div className="card-body">
                   <h5 className="card-title">{p.key.name}</h5>
-                  <p className="card-text">{p.key.description}</p>
+                  <p className="card-text">
+                    Em estoque: {p.quantity} - <strong>R$ {p.value.toFixed(2).replace('.', ',')}</strong>
+                  </p>
                 </div>
               </div>
             </div>
