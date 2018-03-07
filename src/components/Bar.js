@@ -52,7 +52,7 @@ class Bar extends Component {
         </nav>
         <nav className="navbar fixed-top" style={border}>
           <div className="container-fluid">
-            <a href="#" className="menu-item text-left" onClick={this.props.showProducts}><i className="fa fa-th"></i>&nbsp;Produtos</a>
+            <a href="#" className="menu-item text-left" onClick={() => this.props.showProducts('')}><i className="fa fa-th"></i>&nbsp;Produtos</a>
             <a href="#" className="menu-item text-left" onClick={this.props.showProviders}><i className="fa fa-compass"></i>&nbsp;Descobrir</a>
             <a href="#" className="menu-item text-left" onClick={this.props.showRequests}><i className="fa fa-bars"></i>&nbsp;Pedidos</a>
           </div>

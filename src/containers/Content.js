@@ -11,10 +11,10 @@ class Content extends Component {
     const nav = this.props.nav
     const api = this.props.api
     switch (nav.choice) {
-      case 'CART': return <Bag url={api}/>
+      case 'CART': return <Bag url={api} id={this.props.id}/>
       case 'PROFILE': return <Profile url={api}/>
-      case 'REQUESTS': return <Request url={api}/>
-      case 'PRODUCTS': return <Product url={api}/>
+      case 'REQUESTS': return <Request url={api} id={this.props.id}/>
+      case 'PRODUCTS': return <Product url={api} data=''/>
       default: return <Catalog url={api}/>
     }
   }

@@ -6,7 +6,10 @@ import Content from './Content'
 class App extends Component {
   constructor (props) {
     super(props)
-    this.state = { token: sessionStorage.getItem('token') || null }
+    this.state = {
+      token: sessionStorage.getItem('token') || null,
+      id: sessionStorage.getItem('id') || null
+    }
   }
 
   render () {
@@ -16,15 +19,17 @@ class App extends Component {
       return (
         <div>
           <Navigation/>
-          <Content/>
+          <Content id={this.state.id}/>
         </div>
       )
     }
   }
 
-  login (token) {
+  login (data) {
+    const { token, id } = data
     sessionStorage.setItem('token', token)
-    this.setState({ token })
+    sessionStorage.setItem('id', id)
+    this.setState({ token, id })
   }
 }
 

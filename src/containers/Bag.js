@@ -6,8 +6,7 @@ import axios from 'axios'
 class Bag extends Component {
   constructor (props) {
     super(props)
-    let bagItems = JSON.parse(localStorage.getItem('cart')) || []
-    this.state = { items: bagItems }
+    this.state = { items: JSON.parse(localStorage.getItem('cart')) || [] }
     this.api = this.props.url
     this.key = sessionStorage.getItem('token')
     this.handleClick = this.handleClick.bind(this)
@@ -16,12 +15,12 @@ class Bag extends Component {
   handleClick (event) {
     let products = this.props.bag.items
     products.map((product) => {
-      console.log(product)
       return axios({
         method: 'post',
         url: this.api + '/api/requests/',
         headers: { 'Authorization': 'Token ' + this.key },
         data: {
+          'client': this.props.id,
           'provider': product.provider,
           'products': [ product.key.id ],
           'estimated': '2018-12-04T12:00:00Z'

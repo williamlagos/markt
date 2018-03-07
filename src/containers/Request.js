@@ -11,7 +11,7 @@ class Request extends Component {
   }
 
   componentDidMount () {
-    axios.get(this.api + '/api/requests/', {
+    axios.get(this.api + `/api/requests/?client=${this.props.id}`, {
       headers: { 'Authorization': 'Token ' + this.key }
     }).then((response) => {
       let requests = response.data.results

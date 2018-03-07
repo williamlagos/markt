@@ -14,7 +14,7 @@ class Product extends Component {
 
   componentDidMount () {
     // Fetching products by provider or all
-    const query = this.props.data || ''
+    const query = this.props.data.query || ''
     axios.get(this.api + `/api/stocks/${query}`, {
       headers: { 'Authorization': 'Token ' + this.key }
     }).then((response) => {
@@ -55,7 +55,7 @@ class Product extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch, data: state.navigate.query })
+const mapStateToProps = (state) => ({ api: state.fetch, data: state.navigate })
 const mapDispatchToProps = { addToCart }
 
 const ProductContainer = connect(mapStateToProps, mapDispatchToProps)(Product)

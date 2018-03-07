@@ -18,7 +18,7 @@ class Entrance extends Component {
       username: this.state.login,
       password: this.state.passw
     }).then((result) => {
-      this.props.authenticate(result.data.token)
+      this.props.authenticate(result.data)
     })
     event.preventDefault()
   }
