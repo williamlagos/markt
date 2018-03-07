@@ -27,15 +27,20 @@ class List extends Component {
         </div>
       ))
     } else {
-      return items.map((item, index) => (
-        <div key={index} className="col-md-12" style={{ marginBottom: '5px', marginTop: '5px' }}>
-          <div className="card">
-            <div className="card-body text-left">
-              <h6 className="card-text">Pedido {item.id}</h6>
+      return items.map((item, index) => {
+        const estimated = new Date(Date.parse(item.estimated)).toLocaleString()
+        return (
+          <div key={index} className="col-md-12" style={{ marginBottom: '5px', marginTop: '5px' }}>
+            <div className="card">
+              <div className="card-body text-text">
+                <h5 className="card-title">{item.id} - Pedido de {item.provider.name} </h5>
+                <h6 className="card-text">Endereço de saída: {item.provider.address}</h6>
+                <p className="card-text">Tempo estimado: {estimated}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))
+        )
+      })
     }
   }
 }

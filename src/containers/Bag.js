@@ -20,10 +20,10 @@ class Bag extends Component {
         url: this.api + '/api/requests/',
         headers: { 'Authorization': 'Token ' + this.key },
         data: {
-          'client': this.props.id,
-          'provider': product.provider,
-          'products': [ product.key.id ],
-          'estimated': '2018-12-04T12:00:00Z'
+          'client_id': this.props.id,
+          'provider_id': product.provider,
+          'request_products': [ product.key.id ],
+          'estimated': new Date().toISOString()
         }
       }).then((response) => {
         localStorage.removeItem('cart')

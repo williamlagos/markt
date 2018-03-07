@@ -24,7 +24,7 @@ class Grid extends Component {
       return items.map((p, index) => (
         <div key={index} className="col-md-3" style={{ marginBottom: '5px', marginTop: '5px' }}>
           <div className="card">
-            <a onClick={() => this.props.addToCart(p)} value={p.id} href="#product">
+            <a onClick={() => this.props.addToCart(p)} value={p.id} href="#">
               <img className="img-fluid" style={{ height: '100px', padding: '5px' }} src={p.key.photo} alt="Provider"/>
             </a>
             <div className="text-center">
@@ -34,7 +34,7 @@ class Grid extends Component {
                 <p className="card-text">{p.key.description}</p>
               </div>
             </div>
-            <div class="card-footer text-muted">
+            <div className="card-footer text-muted">
               {p.quantity} em estoque
             </div>
           </div>
