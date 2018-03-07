@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { showProgress } from '../actions'
 import List from '../components/List'
 import axios from 'axios'
 
@@ -23,11 +25,16 @@ class Request extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <List items={this.state.requests} brief />
+          <List items={this.state.requests} progress={this.props.showProgress} brief />
         </div>
       </div>
     )
   }
 }
 
-export default Request
+const mapStateToProps = (state) => ({ api: state.fetch })
+const mapDispatchToProps = { showProgress }
+
+const RequestContainer = connect(mapStateToProps, mapDispatchToProps)(Request)
+
+export default RequestContainer

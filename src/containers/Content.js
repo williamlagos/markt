@@ -4,6 +4,7 @@ import Profile from './Profile'
 import Catalog from './Catalog'
 import Product from './Product'
 import Request from './Request'
+import Progress from './Progress'
 import Bag from './Bag'
 
 class Content extends Component {
@@ -15,6 +16,7 @@ class Content extends Component {
       case 'PROFILE': return <Profile url={api}/>
       case 'REQUESTS': return <Request url={api} id={this.props.id}/>
       case 'PRODUCTS': return <Product url={api} data=''/>
+      case 'PROGRESS': return <Progress url={api}/>
       default: return <Catalog url={api}/>
     }
   }
