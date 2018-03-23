@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
+import Register from './Register.js'
+import Login from './Login.js'
 
 class Page extends Component {
   render () {
+    const isRegistered = this.props.registered
+    const customBackground = {
+      background: 'url("./assets/friends.jpg")',
+      backgroundSize: 'cover'
+    }
+    const context = isRegistered ? (
+      <Login {...this.props}/>
+    ) : (
+      <Register {...this.props}/>
+    )
     return (
-      <div id="login" style={{ background: 'url("./assets/friends.jpg")', backgroundSize: 'cover' }}>
-        <form className="form-signin" onSubmit={this.props.submit} style={{ backgroundColor: 'white', borderRadius: '10px' }}>
-          <img className="img-responsive rounded" src="./assets/icon.png" alt="Vupit Logo" style={{ maxWidth: '100px' }}/><br/>
-          <h1 style={{ fontFamily: 'Roboto Slab' }}>Vupit</h1><br/>
-          <input type="text" name="login" className="form-control" onChange={this.props.change} placeholder="E-mail"/>
-          <input type="password" name="passw" className="form-control" onChange={this.props.change} placeholder="Senha"/>
-          <button className="btn btn-lg btn-default btn-block" onSubmit={this.props.submit} type="submit">Entrar</button>
-        </form>
-      </div>
+      <div id="page" style={customBackground}> {context} </div>
     )
   }
 }

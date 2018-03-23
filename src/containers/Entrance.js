@@ -7,9 +7,10 @@ import Page from '../components/Page'
 class Entrance extends Component {
   constructor (props) {
     super(props)
-    this.state = { passw: '', login: '' }
+    this.state = { passw: '', login: '', registered: true }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleRegister = this.handleRegister.bind(this)
   }
 
   handleSubmit (event) {
@@ -29,8 +30,18 @@ class Entrance extends Component {
     this.setState({ [name]: vals })
   }
 
+  handleRegister (event) {
+    this.setState({ registered: false })
+  }
+
   render () {
-    return <Page change={this.handleChange} submit={this.handleSubmit}/>
+    const props = {
+      registered: this.state.registered,
+      register: this.handleRegister,
+      change: this.handleChange,
+      submit: this.handleSubmit
+    }
+    return <Page {...props}/>
   }
 }
 
