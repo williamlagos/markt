@@ -31,7 +31,14 @@ class Entrance extends Component {
   }
 
   handleRegister (event) {
-    this.setState({ registered: false })
+    event.preventDefault()
+    if (this.state.registered) {
+      // const api = this.props.api
+      // axios.post(api + '/api/')
+      this.setState({ registered: false})
+    } else {
+      this.setState({ registered: true })
+    }
   }
 
   render () {
