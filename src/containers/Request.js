@@ -32,7 +32,7 @@ class Request extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch })
+const mapStateToProps = (state) => ({ api: state.fetch.url })
 const mapDispatchToProps = { showProgress }
 
 const RequestContainer = connect(mapStateToProps, mapDispatchToProps)(Request)

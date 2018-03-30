@@ -20,6 +20,8 @@ class Entrance extends Component {
       password: this.state.passw
     }).then((result) => {
       this.props.authenticate(result.data)
+    }).catch((reason) => {
+      console.log(reason)
     })
     event.preventDefault()
   }
@@ -32,12 +34,36 @@ class Entrance extends Component {
 
   handleRegister (event) {
     event.preventDefault()
-    if (this.state.registered) {
-      // const api = this.props.api
-      // axios.post(api + '/api/')
-      this.setState({ registered: false})
+    if (!this.state.registered) {
+      const p1 = this.state.passw1
+      const p2 = this.state.passw2
+      const api = this.props.api
+      axios({
+        headers: { 'Authorization': 'Token ' + this.props.token },
+        method: 'post',
+        url: api + '/api/profiles/',
+        data: {
+          user: {
+            username: this.state.username,
+            password: p1 === p2 ? p1 : 'password',
+            email: this.state.email
+          },
+          lat: 0.0,
+          lon: 0.0,
+          name: this.state.name,
+          description: 'Vupit user',
+          address: this.state.address,
+          phone: this.state.phone,
+          side: 1,
+          rank: 5
+        }
+      }).then((result) => {
+        this.setState({ registered: true})
+      }).catch((reason) => {
+        // console.log(reason)
+      })
     } else {
-      this.setState({ registered: true })
+      this.setState({ registered: false })
     }
   }
 
@@ -52,7 +78,7 @@ class Entrance extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch })
+const mapStateToProps = (state) => ({ api: state.fetch.url, token: state.fetch.admin })
 
 Entrance.propTypes = {
   url: string,

@@ -38,7 +38,7 @@ class Catalog extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch })
+const mapStateToProps = (state) => ({ api: state.fetch.url })
 const mapDispatchToProps = { showProducts }
 
 const CatalogContainer = connect(mapStateToProps, mapDispatchToProps)(Catalog)

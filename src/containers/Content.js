@@ -22,7 +22,7 @@ class Content extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch, nav: state.navigate })
+const mapStateToProps = (state) => ({ api: state.fetch.url, nav: state.navigate })
 
 const ContentContainer = connect(mapStateToProps)(Content)
 

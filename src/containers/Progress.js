@@ -19,7 +19,7 @@ class Progress extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ api: state.fetch, item: state.navigate.item })
+const mapStateToProps = (state) => ({ api: state.fetch.url, item: state.navigate.item })
 
 const ProgressContainer = connect(mapStateToProps)(Progress)
 
