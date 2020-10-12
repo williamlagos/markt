@@ -1,3 +1,3 @@
-# Vupit webapp
+# Delivery webapp
 
 Application developed with React, Redux, Webpack and ESLint.

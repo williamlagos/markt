@@ -51,7 +51,7 @@ class Entrance extends Component {
           lat: 0.0,
           lon: 0.0,
           name: this.state.name,
-          description: 'Vupit user',
+          description: 'Delivery user',
           address: this.state.address,
           phone: this.state.phone,
           side: 1,
